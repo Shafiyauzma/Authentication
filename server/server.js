@@ -20,8 +20,8 @@ app.use(cookieParser())
 
 // Allow all origins and support cookies
 app.use(cors({
-    origin: '*',
-    credentials:true
+    origin: ['https://authentication-1-liard.vercel.app'], // Add your frontend URL here
+    credentials: true
 }));
 
 // API Endpoints
