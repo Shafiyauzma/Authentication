@@ -109,6 +109,7 @@ export const login = async (req,res)=>{
         })
         
     } catch (error) {
+        console.log(error)
        return res.json({
             success: false,
             message: error.message

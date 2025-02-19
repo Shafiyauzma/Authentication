@@ -20,11 +20,8 @@ app.use(cookieParser())
 
 // Allow all origins and support cookies
 app.use(cors({
-    
-    origin: (origin, callback) =>{
-        callback(null,true);
-    },
-     credentials:true
+    origin: '*',
+    credentials:true
 }));
 
 // API Endpoints
