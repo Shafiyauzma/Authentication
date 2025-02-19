@@ -13,7 +13,7 @@ const port = process.env.PORT || 2000
 
 connectDB();
 
-const allowedOrigins = ['http://localhost:5173']
+const allowedOrigins = ['https://authentication-1-liard.vercel.app']
 
 app.use(express.json())
 app.use(cookieParser())
