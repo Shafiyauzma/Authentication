@@ -13,11 +13,19 @@ const port = process.env.PORT || 2000
 
 connectDB();
 
-const allowedOrigins = ['https://authentication-1-liard.vercel.app']
+// const allowedOrigins = ['https://authentication-1-liard.vercel.app']
 
 app.use(express.json())
 app.use(cookieParser())
-app.use(cors({origin:allowedOrigins, credentials:true}))
+
+// Allow all origins and support cookies
+app.use(cors({
+    
+    origin: (origin, callback) =>{
+        callback(null,true);
+    },
+     credentials:true
+}));
 
 // API Endpoints
 app.use('/api/auth',authRouter)
