@@ -40,16 +40,20 @@ const Login = () => {
         const {data} =  await axios.post(backendUrl + '/api/auth/login',{email,password})
 
         if(data.success){
+          // store token in localstorage
+          localStorage.setItem('token',data.token)
           setIsLoggedin(true)
-          getUserData()
+          // getUserData()
           navigate('/')
         }else{
+          
           toast.error(data.message)
         }
       }
       
     } 
     catch (error) {
+      console.log(error)
       toast.error(error.message)
     }
   }

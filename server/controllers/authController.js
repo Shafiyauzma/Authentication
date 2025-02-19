@@ -105,7 +105,8 @@ export const login = async (req,res)=>{
         })
 
         return res.json({
-            success: true
+            success: true,
+            token: token
         })
         
     } catch (error) {
